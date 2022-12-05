@@ -1,7 +1,7 @@
 
 // Section Title
 // Orders
-export interface AppContextInterface {
+export type GlobalState = {
     apiKey: any;
 }
   
@@ -117,3 +117,4 @@ export interface NetAmountDueMoney {
     currency: string;
 }
 
+export type ContextAction = {type: 'GET_CONTEXT'; blah: any}

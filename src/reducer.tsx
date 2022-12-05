@@ -1,24 +1,12 @@
-import { AppContextInterface } from "./Types/Types";
+import { ContextAction, GlobalState } from "./Types/Types";
 
-
-  type Props = {
-    state: AppContextInterface, 
-    action: Action
-  }
-
-  type Action = {
-    type: string;
-  }
-const reducer = ({state, action} :Props) => {
-    switch (action.type) {
-        case 'test': {
-          return {
-            ...state,
-            apiKey: "q23"
-          };
+const reducer = (state: GlobalState, action: ContextAction) => {
+        switch(action.type){
+            case 'GET_CONTEXT':
+                console.log("GET CONTEXT2");
         }
-      }
-      throw Error('Unknown action: ' + action.type);
+      console.log(action);
+      return state;
   }
 
   export default reducer;

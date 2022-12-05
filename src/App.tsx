@@ -1,24 +1,27 @@
-import React, { createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
 import './App.css';
-import AppCtx from './AppCtx';
+import AppCtx from './GlobalContext';
 
 import BulkCatalogDiff from './Components/BulkCatalogDiff';
-import { AppContextInterface } from './Types/Types';
+import GlobalContext from './GlobalContext';
+import { GlobalState } from './Types/Types';
+import reducer from './Reducer';
 
-const sampleAppContext: AppContextInterface = {
+const initialState: GlobalState = {
   apiKey: "placeholderAPIkey2"
 };
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    <AppCtx.Provider value={sampleAppContext}>
+    <GlobalContext.Provider value={{state, dispatch}}>
       <div className="App container">
         <header className="App-header h1">
           ETL Diff Tool
         </header>
         <BulkCatalogDiff />
       </div>
-    </AppCtx.Provider>
+    </GlobalContext.Provider>
   );
 }
 
