@@ -21,6 +21,7 @@ const BulkCatalogDiff = ({} : Props) => {
             setData(data);
           });
     }, []);
+
   return (
     <div className="BulkCatalogDiff">
       <div>

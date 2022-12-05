@@ -3,8 +3,8 @@
         {
             "type": "ITEM",
             "id": "HTDOPMSWWQ22YMBNDHW6ICCH",
-            "updated_at": "2022-12-02T17:22:14.92Z",
-            "version": 1670001734920,
+            "updated_at": "2022-12-05T16:33:04.277Z",
+            "version": 1670257984277,
             "present_at_all_locations": true,
             "item_data": {
                 "name": "Shirt",
@@ -13,8 +13,8 @@
                     {
                         "type": "ITEM_VARIATION",
                         "id": "QTSNJYCWGNBSGAFZN2FSQQ5J",
-                        "updated_at": "2022-12-02T17:22:14.92Z",
-                        "version": 1670001734920,
+                        "updated_at": "2022-12-05T16:33:04.277Z",
+                        "version": 1670257984277,
                         "present_at_all_locations": true,
                         "item_variation_data": {
                             "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
@@ -32,8 +32,8 @@
                     {
                         "type": "ITEM_VARIATION",
                         "id": "DC5SHCU7NXPWTEK6LMFM5S2V",
-                        "updated_at": "2022-12-02T17:22:14.92Z",
-                        "version": 1670001734920,
+                        "updated_at": "2022-12-05T16:33:04.277Z",
+                        "version": 1670257984277,
                         "present_at_all_locations": true,
                         "item_variation_data": {
                             "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
@@ -58,12 +58,12 @@
                     {
                         "type": "ITEM_VARIATION",
                         "id": "UT5FNS2HLHJJWYYJR32TWFE6",
-                        "updated_at": "2022-12-02T17:22:14.92Z",
-                        "version": 1670001734920,
+                        "updated_at": "2022-12-05T16:33:04.277Z",
+                        "version": 1670257984277,
                         "present_at_all_locations": true,
                         "item_variation_data": {
                             "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
-                            "name": "LARGE",
+                            "name": "Large",
                             "sku": "0003",
                             "ordinal": 2,
                             "pricing_type": "FIXED_PRICING",

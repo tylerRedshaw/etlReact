@@ -4,7 +4,8 @@ import reducer from "./Reducer";
 import { ContextAction, GlobalState } from "./Types/Types";
 
 export const initialState: GlobalState = {
-    apiKey: "EAAAEINRS1-ATVKx_ZBs2oVgffIzRtDcDcJ7LReuJTdCs4Qo1ECr7yCmwQPgPRJr"
+    apiKey: "EAAAEINRS1-ATVKx_ZBs2oVgffIzRtDcDcJ7LReuJTdCs4Qo1ECr7yCmwQPgPRJr",
+    selectedFlow: 'CATALOG'
 }
 
 const GlobalContext = createContext<{

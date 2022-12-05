@@ -3,6 +3,7 @@
 // Orders
 export type GlobalState = {
     apiKey?: string;
+    selectedFlow?: string;
 }
   
 export interface OrderResponseObject {
