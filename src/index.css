@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Diff-container {
+  max-height: 600px;
+  max-width: 70%;
+  border: 2px solid black;
+  overflow-y: auto;
+}
+
+.Decision {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.Decision-btn {
+  margin: 8px 0;
+}
+
+.ApiKey{
+  margin: 16px 0;
+}
+
+input{
+  width: 90%;
+}

@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext } from 'react';
 import './App.css';
+import AppCtx from './AppCtx';
+
+import BulkCatalogDiff from './Components/BulkCatalogDiff';
+import { AppContextInterface } from './Types/Types';
+
+const sampleAppContext: AppContextInterface = {
+  apiKey: "placeholderAPIkey2"
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppCtx.Provider value={sampleAppContext}>
+      <div className="App container">
+        <header className="App-header h1">
+          ETL Diff Tool
+        </header>
+        <BulkCatalogDiff />
+      </div>
+    </AppCtx.Provider>
   );
 }
 

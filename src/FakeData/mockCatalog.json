@@ -1,0 +1,91 @@
+{
+    "objects": [
+        {
+            "type": "ITEM",
+            "id": "HTDOPMSWWQ22YMBNDHW6ICCH",
+            "updated_at": "2022-12-02T17:22:14.92Z",
+            "version": 1670001734920,
+            "present_at_all_locations": true,
+            "item_data": {
+                "name": "Shirt",
+                "description": "This description is different",
+                "variations": [
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "QTSNJYCWGNBSGAFZN2FSQQ5J",
+                        "updated_at": "2022-12-02T17:22:14.92Z",
+                        "version": 1670001734920,
+                        "present_at_all_locations": true,
+                        "item_variation_data": {
+                            "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
+                            "name": "Small",
+                            "sku": "123456789",
+                            "pricing_type": "FIXED_PRICING",
+                            "price_money": {
+                                "amount": 800,
+                                "currency": "USD"
+                            },
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    },
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "DC5SHCU7NXPWTEK6LMFM5S2V",
+                        "updated_at": "2022-12-02T17:22:14.92Z",
+                        "version": 1670001734920,
+                        "present_at_all_locations": true,
+                        "item_variation_data": {
+                            "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
+                            "name": "Medium",
+                            "sku": "0002",
+                            "ordinal": 1,
+                            "pricing_type": "FIXED_PRICING",
+                            "price_money": {
+                                "amount": 1000,
+                                "currency": "USD"
+                            },
+                            "location_overrides": [
+                                {
+                                    "location_id": "LXZR8D4J3Q8VN",
+                                    "track_inventory": true
+                                }
+                            ],
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    },
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "UT5FNS2HLHJJWYYJR32TWFE6",
+                        "updated_at": "2022-12-02T17:22:14.92Z",
+                        "version": 1670001734920,
+                        "present_at_all_locations": true,
+                        "item_variation_data": {
+                            "item_id": "HTDOPMSWWQ22YMBNDHW6ICCH",
+                            "name": "LARGE",
+                            "sku": "0003",
+                            "ordinal": 2,
+                            "pricing_type": "FIXED_PRICING",
+                            "price_money": {
+                                "amount": 1200,
+                                "currency": "USD"
+                            },
+                            "location_overrides": [
+                                {
+                                    "location_id": "LXZR8D4J3Q8VN",
+                                    "track_inventory": true
+                                }
+                            ],
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    }
+                ],
+                "product_type": "REGULAR",
+                "description_html": "\u003cp\u003eThis is an item\u003c/p\u003e",
+                "description_plaintext": "This is an item"
+            }
+        }
+    ]
+}
