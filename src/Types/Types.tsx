@@ -2,7 +2,7 @@
 // Section Title
 // Orders
 export type GlobalState = {
-    apiKey: any;
+    apiKey?: string;
 }
   
 export interface OrderResponseObject {
@@ -117,4 +117,4 @@ export interface NetAmountDueMoney {
     currency: string;
 }
 
-export type ContextAction = {type: 'GET_CONTEXT'; blah: any}
+export type ContextAction = {type: string; data: any}

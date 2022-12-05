@@ -1,11 +1,18 @@
 import { ContextAction, GlobalState } from "./Types/Types";
 
 const reducer = (state: GlobalState, action: ContextAction) => {
-        switch(action.type){
-            case 'GET_CONTEXT':
-                console.log("GET CONTEXT2");
-        }
-      console.log(action);
+      switch(action.type){
+          case 'UPDATE_KEY':
+              return {
+                  ...state,
+                  apiKey: action.data
+              }
+          default:
+            const errorMessage = `INVALID METHOD: ${action.type}`
+            window.alert(errorMessage)
+                  
+      }
+
       return state;
   }
 
