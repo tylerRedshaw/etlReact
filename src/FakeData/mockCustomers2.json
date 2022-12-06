@@ -1,0 +1,60 @@
+{
+    "customers": [
+        {
+            "id": "J6C9C6HGEM31BAR3K54QFXHM1R",
+            "created_at": "2022-12-05T17:41:42.413Z",
+            "updated_at": "2022-12-05T17:41:42Z",
+            "family_name": "Family Name",
+            "nickname": "Nick",
+            "company_name": "Test Company",
+            "email_address": "test@test.com",
+            "address": {
+                "address_line_1": "123 Main Street",
+                "postal_code": "23060",
+                "country": "US"
+            },
+            "phone_number": "804-517-0162",
+            "birthday": "2001-01-01",
+            "note": "note",
+            "preferences": {},
+            "creation_source": "THIRD_PARTY"
+        },
+        {
+            "id": "SJAVQ6QNT7WKGS7ZAGYSGRXC5M",
+            "created_at": "2022-12-05T17:42:06.486Z",
+            "updated_at": "2022-12-05T17:42:06Z",
+            "family_name": "Family Name",
+            "nickname": "Nick",
+            "company_name": "Test Company",
+            "email_address": "test@test.com",
+            "address": {
+                "address_line_1": "456 Main Street",
+                "postal_code": "23060",
+                "country": "US"
+            },
+            "phone_number": "804-517-0162",
+            "birthday": "2001-01-01",
+            "note": "note",
+            "preferences": {},
+            "creation_source": "THIRD_PARTY"
+        },
+        {
+            "id": "YD4EC8TQ4N2X6TN2GQ568ZX174",
+            "created_at": "2022-12-05T17:42:19.322Z",
+            "updated_at": "2022-12-05T17:42:19Z",
+            "family_name": "Family Name",
+            "nickname": "Nick",
+            "company_name": "Test Company",
+            "email_address": "test@test.com",
+            "address": {
+                "address_line_1": "456 Main Street",
+                "postal_code": "22222",
+                "country": "US"
+            },
+            "phone_number": "804-517-0162",
+            "birthday": "2001-01-01",
+            "note": "note",
+            "preferences": {},
+            "creation_source": "THIRD_PARTY"
+        }
+    ]

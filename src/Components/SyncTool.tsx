@@ -3,18 +3,33 @@ import 'bootstrap/dist/css/bootstrap.css';
 import useGlobalContext from '../useGlobalContext';
 import BulkCatalogDiff from './BulkCatalogDiff';
 import { render } from '@testing-library/react';
-
+import ApiKey from './ApiKey';
+import Customers from './Customers';
+import Select from 'react-select';
+import { useState } from 'react';
+import LoadingOverlay from 'react-loading-overlay';
 type Props = {
     // key: string
 }
 
 const SyncTool = ({} : Props) => {
   // TODO(tredshaw): what is wrong with this
-  const {actions, selectedFlow} = useGlobalContext();
+  const { actions, selectedFlow } = useGlobalContext();
 
+  const options = [
+    { value: 'CATALOG', label: 'Catalog' },
+    { value: 'CUSTOMERS', label: 'Customers' },
+  ]
   return (
     <div className="SyncTool">
-      {renderSwitch(selectedFlow)}
+      <ApiKey />
+      <Select options={options} onChange={(val) => {
+        return actions.updateComponent(val?.value);
+      }
+        }/>
+
+        {renderSwitch(selectedFlow)}
+      
     </div>
   );
 }
@@ -23,8 +38,10 @@ function renderSwitch(compName){
     switch(compName){
         case 'CATALOG':
             return <BulkCatalogDiff/>
+        case 'CUSTOMERS':
+            return <Customers/>
         default: 
-            return "invalid component selected"
+            return "Select Data to Sync"
     }
 }
 

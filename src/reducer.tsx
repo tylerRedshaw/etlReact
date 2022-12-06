@@ -7,6 +7,11 @@ const reducer = (state: GlobalState, action: ContextAction) => {
                   ...state,
                   apiKey: action.data
               }
+          case 'CHANGE_COMPONENT':
+            return {
+                ...state,
+                selectedFlow: action.data
+            }
           default:
             const errorMessage = `INVALID METHOD: ${action.type}`
             window.alert(errorMessage)

@@ -20,7 +20,7 @@ const ApiKey = ({} : Props) => {
   return (
     <div className="ApiKey">
       API Key input field
-      <input value={apiKey} onChange={(e) => { actions.updateApiKey(e.target.value)}}></input>
+      <input value={apiKey} className="form-control" onChange={(e) => { actions.updateApiKey(e.target.value)}}></input>
     </div>
   );
 }

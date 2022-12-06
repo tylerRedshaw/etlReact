@@ -11,10 +11,19 @@ const useGlobalContext = () => {
         })
     }
 
+    const updateComponent = (selectedFlow) => {
+        console.log(selectedFlow);
+        dispatch({
+            type: 'CHANGE_COMPONENT',
+            data: selectedFlow
+        })
+    }
+
     return {
         ...state,
         actions: {
-            updateApiKey
+            updateApiKey,
+            updateComponent
         }
     }
 }
