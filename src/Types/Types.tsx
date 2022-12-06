@@ -1,9 +1,12 @@
+import { BatchRetrieveCatalogObjectsResponse } from '../Types/Catalog';
 
 // Section Title
 // Orders
 export type GlobalState = {
     apiKey?: string;
     selectedFlow?: string;
+    catalog?: BatchRetrieveCatalogObjectsResponse;
+    mockCatalog?: BatchRetrieveCatalogObjectsResponse;
 }
   
 export interface OrderResponseObject {

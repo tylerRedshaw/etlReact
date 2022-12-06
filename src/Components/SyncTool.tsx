@@ -13,7 +13,6 @@ type Props = {
 }
 
 const SyncTool = ({} : Props) => {
-  // TODO(tredshaw): what is wrong with this
   const { actions, selectedFlow } = useGlobalContext();
 
   const options = [

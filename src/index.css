@@ -14,7 +14,6 @@ code {
 
 .Diff-container {
   max-height: 600px;
-  max-width: 70%;
   border: 2px solid black;
   overflow-y: auto;
 }
@@ -28,6 +27,16 @@ code {
   margin: 8px 0;
 }
 
+.Decision-container{
+  display: flex;
+  align-items: center;
+}
+
+.Decision-alert{
+  margin-left: 64px;
+  width: 300px
+}
+
 .ApiKey {
   margin: 16px 0;
 }
@@ -38,4 +47,7 @@ input {
 
 .Tool-subTitle {
   margin: 16px 0;
+}
+._loading_overlay_overlay {
+  background: rgba(0, 0, 0, 0.85) !important
 }

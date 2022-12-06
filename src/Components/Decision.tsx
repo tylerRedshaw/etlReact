@@ -1,25 +1,46 @@
-import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import '../App.css';
-import { Order, OrderResponseObject } from '../Types/Types';
-import mockDataSource from '../FakeData/mockOrder.json'
-import ReactJsonViewCompare from 'react-json-view-compare';
 import 'bootstrap/dist/css/bootstrap.css';
 import useGlobalContext from '../useGlobalContext';
 
 type Props = {
     // props
     mockSourceData: any,
-    squareData: any
+    squareData: any,
+    submitAction?: any
 }
-const Decision = ({mockSourceData, squareData} : Props) => {
+const Decision = ({mockSourceData, squareData, submitAction} : Props) => {
    const {apiKey} = useGlobalContext();
+   const [showSuccess, setShowSuccess] = useState(false);
+   const [showError, setShowError] = useState(false);
 
   return (
-    <div className="Decision">
-        <button type="button" className="btn btn-success Decision-btn" onClick={() => syncSquare(squareData)}>Sync Square Data</button>
-        <button type="button" className="btn btn-danger Decision-btn" onClick={() => syncWithThirdParty(mockSourceData, apiKey)}>Sync Third Party Data</button>
-    </div>
+    <div className="Decision-container">
+      <div className="Decision">
+        <button type="button" className="btn btn-success Decision-btn" onClick={() => {
+            setShowError(true)
+            syncSquare(squareData)
+          }}>Sync Square Data
+        </button>
+        <button type="button" className="btn btn-danger Decision-btn" 
+          onClick={() => {
+            syncWithThirdParty(mockSourceData, apiKey, setShowSuccess, setShowError)
+          }}>
+            Sync Third Party Data
+        </button>
+      </div>
+      {showSuccess && (
+        <div className="Decision-alert alert alert-success">
+          Data successfully synchronized!
+        </div>
+      )}
+      {showError && (
+        <div className="Decision-alert alert alert-warning">
+          This would sync to third party
+        </div>
+      )}
+  </div>
+    
   );
 }
 function syncSquare(data :any){
@@ -27,18 +48,25 @@ function syncSquare(data :any){
   console.log(data);
 }
 
-function syncWithThirdParty(data :any, apiKey){
+function syncWithThirdParty(data :any, apiKey, setShowSuccess, setShowError){
   const requestObject = {
     apiKey: apiKey, 
     catalogObjectBatch: data
   }
-  
-  console.log(requestObject);
   fetch('http://localhost:8080/catalog/update', {
     method: 'POST',
     body: JSON.stringify(requestObject)
   })
-  .then((response) => response.json())
+  .then((response) => {
+    response.json()
+    console.log("response status:: " + response.status);
+
+    if(response.status == 400){
+      setShowError(true)
+    } else {
+      setShowSuccess(true)
+    }
+  })
   .then((data) => {
     console.log('Success:', data);
   })

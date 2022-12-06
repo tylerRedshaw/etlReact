@@ -13,7 +13,7 @@ type Props = {
 }
 
 const Customers = ({} : Props) => {
-    const [data, setData] = useState<BatchRetrieveCatalogObjectsResponse | undefined>(undefined);
+    const [ data, setData ] = useState<BatchRetrieveCatalogObjectsResponse | undefined>(undefined);
     const [ loading, setLoading ] = useState(false);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const Customers = ({} : Props) => {
 
       // GET request using fetch inside useEffect React hook
       setTimeout(() => {
+        // TODO(tredshaw): move this into useGlobalContext
         fetch('http://localhost:8080/customers')
         .then(response => response.json())
         .then(data => {

@@ -1,3 +1,4 @@
+import { BatchRetrieveCatalogObjectsResponse } from "./Types/Catalog";
 import { ContextAction, GlobalState } from "./Types/Types";
 
 const reducer = (state: GlobalState, action: ContextAction) => {
@@ -11,6 +12,16 @@ const reducer = (state: GlobalState, action: ContextAction) => {
             return {
                 ...state,
                 selectedFlow: action.data
+            }
+          case 'FETCH_CATALOG':
+            return {
+              ...state, 
+              catalog: action.data,
+            }
+          case 'MOCK_CATALOG':
+            return {
+              ...state, 
+              mockCatalog: action.data
             }
           default:
             const errorMessage = `INVALID METHOD: ${action.type}`

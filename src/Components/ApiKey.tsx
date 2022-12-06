@@ -14,12 +14,11 @@ type Props = {
 }
 
 const ApiKey = ({} : Props) => {
-  // TODO(tredshaw): what is wrong with this
   const {actions, apiKey} = useGlobalContext();
 
   return (
     <div className="ApiKey">
-      API Key input field
+      API Access Token
       <input value={apiKey} className="form-control" onChange={(e) => { actions.updateApiKey(e.target.value)}}></input>
     </div>
   );

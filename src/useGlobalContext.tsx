@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import GlobalContext from "./GlobalContext";
+import randomWords from "random-words"
 
 const useGlobalContext = () => {
     const { state, dispatch } = useContext(GlobalContext);
@@ -19,11 +20,32 @@ const useGlobalContext = () => {
         })
     }
 
+    const fetchCatalog = () => {
+      fetch('http://localhost:8080/catalog')
+      .then(response => response.json())
+      .then(data => {
+        let mockCatalogData = JSON.parse(JSON.stringify(data));
+        mockCatalogData.objects[0].item_data.variations[0].item_variation_data.name = randomWords(1)[0] // fake a change
+
+          dispatch({
+            type: 'FETCH_CATALOG',
+            data: data
+          })
+
+          dispatch({
+            type: 'MOCK_CATALOG',
+            data: mockCatalogData
+          })
+      });
+    }
+
+
     return {
         ...state,
         actions: {
             updateApiKey,
-            updateComponent
+            updateComponent,
+            fetchCatalog,
         }
     }
 }
