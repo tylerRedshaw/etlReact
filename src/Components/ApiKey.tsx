@@ -1,13 +1,6 @@
-import React, {useState, useEffect, useReducer} from 'react';
-import logo from './logo.svg';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { useContext } from "react";
-import reducer from '../Reducer';
-import { ContextAction } from '../Types/Types';
-import GlobalContext from '../GlobalContext';
 import useGlobalContext from '../useGlobalContext';
-import { act } from 'react-dom/test-utils';
 
 type Props = {
     // key: string

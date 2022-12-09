@@ -1,4 +1,3 @@
-import { BatchRetrieveCatalogObjectsResponse } from "./Types/Catalog";
 import { ContextAction, GlobalState } from "./Types/Types";
 
 const reducer = (state: GlobalState, action: ContextAction) => {

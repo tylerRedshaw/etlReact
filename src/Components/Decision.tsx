@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import useGlobalContext from '../useGlobalContext';
@@ -10,9 +10,9 @@ type Props = {
     submitAction?: any
 }
 const Decision = ({mockSourceData, squareData, submitAction} : Props) => {
-   const {apiKey} = useGlobalContext();
-   const [showSuccess, setShowSuccess] = useState(false);
-   const [showError, setShowError] = useState(false);
+   const { apiKey } = useGlobalContext();
+   const [ showSuccess, setShowSuccess ] = useState(false);
+   const [ showError, setShowError ] = useState(false);
 
   return (
     <div className="Decision-container">
@@ -53,7 +53,11 @@ function syncWithThirdParty(data :any, apiKey, setShowSuccess, setShowError){
     apiKey: apiKey, 
     catalogObjectBatch: data
   }
-  fetch('http://localhost:8080/catalog/update', {
+
+
+  const url = `http://localhost:8080/catalog/update?key=${apiKey}`
+
+  fetch(url, {
     method: 'POST',
     body: JSON.stringify(requestObject)
   })

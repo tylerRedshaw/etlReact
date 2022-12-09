@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect, useContext} from 'react';
 import '../App.css';
 import { BatchRetrieveCatalogObjectsResponse } from '../Types/Catalog';
 import mockDataSource from '../FakeData/mockCustomers.json'
 import ReactJsonViewCompare from 'react-json-view-compare';
 import Decision from './Decision';
 import LoadingOverlay from 'react-loading-overlay';
+import GlobalContext from '../GlobalContext';
 
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
 const Customers = ({} : Props) => {
     const [ data, setData ] = useState<BatchRetrieveCatalogObjectsResponse | undefined>(undefined);
     const [ loading, setLoading ] = useState(false);
+    const { state } = useContext(GlobalContext);
 
     useEffect(() => {
       setLoading(true)
@@ -22,14 +23,14 @@ const Customers = ({} : Props) => {
       // GET request using fetch inside useEffect React hook
       setTimeout(() => {
         // TODO(tredshaw): move this into useGlobalContext
-        fetch('http://localhost:8080/customers')
+        const url = `http://localhost:8080/customers?key=${state.apiKey}`;
+        fetch(url)
         .then(response => response.json())
         .then(data => {
           setData(data);
           setLoading(false)
         });
       }, 1000)
-      
     }, []);
 
   return (
